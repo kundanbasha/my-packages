@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import ThemeComponent from "@/components/theme-component";
 export default function Home() {
   return (
     <>
@@ -14,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <ThemeComponent />
         <ul>
           <ApplicationCard href="todo-application">
             Todo Application

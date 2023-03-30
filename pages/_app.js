@@ -1,12 +1,7 @@
 import "@/styles/globals.css";
 import { RecoilRoot } from "recoil";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-
-const theme = extendTheme({
-  colors: {
-    primary: "green",
-  },
-});
+import theme from "@/theme";
 
 export default function App({ Component, pageProps }) {
   return (
