@@ -1,5 +1,6 @@
 import { filterSelector, todoListAtom } from "@/recoil";
 import { useRecoilValue, useRecoilState } from "recoil";
+import { Button, Flex } from "@chakra-ui/react";
 export default function TodoList() {
   const filteredTodos = useRecoilValue(filterSelector);
 
@@ -33,7 +34,14 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <div key={todo.id} style={{ display: "flex" }}>
+    <Flex
+      key={todo.id}
+      align="center"
+      mt={1}
+      border="1px"
+      borderColor="primary"
+      w="max-content"
+    >
       <input
         name={todo.id}
         type="checkbox"
@@ -43,8 +51,10 @@ const TodoItem = ({ todo }) => {
       />
       &nbsp;&nbsp;
       <h2>{todo.title}</h2>
-      <button onClick={onDelete}>Delete</button>
-    </div>
+      <Button onClick={onDelete} ml={1}>
+        Delete
+      </Button>
+    </Flex>
   );
 };
 

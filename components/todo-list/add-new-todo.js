@@ -1,5 +1,6 @@
 import { todoListAtom } from "@/recoil";
 import { useSetRecoilState } from "recoil";
+import { Button } from "@chakra-ui/react";
 
 export default function AddNewTodo() {
   const setTodoList = useSetRecoilState(todoListAtom);
@@ -10,7 +11,7 @@ export default function AddNewTodo() {
       { id, title: `Title ${oldTodoList?.length + 1}`, isDone: false },
     ]);
   };
-  return <button onClick={handleAddNewTodo}>Add New Todo</button>;
+  return <Button onClick={handleAddNewTodo}>Add New Todo</Button>;
 }
 
 const getId = () => new Date().getTime();
