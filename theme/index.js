@@ -10,7 +10,13 @@ import { Button } from "./components/button";
 //semantic tokens
 import { semanticTokens } from "./semantic-tokens";
 
-const theme = extendTheme({
+const config = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
+
+export const theme = extendTheme({
+  config,
   colors,
   fontSizes,
   sizes,
@@ -21,5 +27,3 @@ const theme = extendTheme({
 
   semanticTokens,
 });
-
-export default theme;
